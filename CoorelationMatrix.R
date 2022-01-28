@@ -1,4 +1,4 @@
-
+library(readr)
 library(corrplot)
 data<- read_csv("finaldata.csv", col_types = cols(X1 = col_skip()))
 
@@ -110,5 +110,7 @@ data_num3<-data2[,41:50]
 data_num3.cor = cor(data_num3, method = c("spearman"))
 corrplot(data_num3.cor)
 
+
+View(data2)
 write.csv(data2, "finaldataclean.csv")
 
