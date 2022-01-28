@@ -14,13 +14,7 @@ View(data)
 # y outcome trying to measure
 summary(data$ftretention_rate)
 
-#Vizulize y outcome
-histogram= ggplot(data, aes(x=ftretention_rate)) +    
-  
-geom_histogram(binwidth=.05,color="white",fill ="#DFA1A1")+
-  labs( x = "Retention Rate",y = "Count",size = 30)
 
-print(histogram)
 
 
 
@@ -125,7 +119,6 @@ acten75,actmt25,actmt75,actnum,satmt25,satmt75,satnum,
 satvr25,satvr75,associatedegrees,ugentering))
 
 
-View(datar)
 #1 means a public university
 datar$control<-ifelse(data$control==2,1,0)
 
@@ -139,6 +132,7 @@ datar$medical<-ifelse(data$medical==2,0,1)
 
 # Making state dummy variable for each state
 table(data$state)
+
 
 datar$AK<-ifelse(datar$state =="AK",1,0)
 datar$AL<-ifelse(datar$state =="AL",1,0)
@@ -191,3 +185,7 @@ datar$WA<-ifelse(datar$state =="WA",1,0)
 datar$WI<-ifelse(datar$state =="WI",1,0)
 datar$WV<-ifelse(datar$state =="WV",1,0)
 datar$WY<-ifelse(datar$state =="WY",1,0)
+
+datar<-subset(datar,select=-c(state))
+
+write.csv(datar, "finaldata.csv")
