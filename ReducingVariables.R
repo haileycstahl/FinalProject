@@ -98,21 +98,21 @@ print(cor(data$ugentering,data$grscohort))
 
 #Subsetting to new data by reducing variables
 datar<-subset(data,select=-c(tuition_reliance_b1,tuition_reliance_a2,tuition_reliance_b2,
-tuitionfee01_tf,tuitionfee02_tf,tuitionfee03_tf,net_student_tuition,tuition03,
+tuitionfee01_tf,tuitionfee02_tf,tuitionfee03_tf,net_student_tuition,
 acadinstsupp01,acadsupp02,instruction01,instsupp01,instsupp02,
 total02,total04,total05,total03_expenses,
-tuition02_tf,tuition03_tf,sticker_subsidy,sticker_price_share,
+tuition02_tf,sticker_subsidy,sticker_price_share,
 eandg01_sum,eandg02,eandg03,eandg05,eandg08,eandr,eandr_completion,eandg01_w_auxother_sum,
 fringe_benefit_play_imp,assets11,assets15,assets11,
 totalcompletions,totalcompletions_100fte,grad_rate_150_n,
 fall_total_undergrad,ft_first_time_first_yr_deg_seek,other_full_time,
 total_part_time_undergraduates,
 oberegion,any_aid_pct,loan_pct,inst_grant_pct,
-fee02_tf,fee03_tf,average_subsidy_share,labor_share_of_instructcost,labor_share_of_acadsuppcost,
+fee02_tf,average_subsidy_share,labor_share_of_instructcost,labor_share_of_acadsuppcost,
 total_part_time,total_undergraduates,applcnm,applcnw,admssnm,admssnw,admssn,admitcount,
 enrlt,enrlw,enrlm,applicantcount,ft_faculty_per_100fte,actcm25,actcm75,acten25,
 acten75,actmt25,actmt75,actnum,satmt25,satmt75,satnum,
-satvr25,satvr75,associatedegrees,ugentering))
+satvr25,satvr75,associatedegrees,ugentering,tuition03,tuition03_tf,fee03_tf))
 
 
 #1 means a public university
@@ -183,5 +183,5 @@ datar$WV<-ifelse(datar$state =="WV",1,0)
 datar$WY<-ifelse(datar$state =="WY",1,0)
 
 datar<-subset(datar,select=-c(state))
-
+View(datar)
 write.csv(datar, "finaldata.csv")
