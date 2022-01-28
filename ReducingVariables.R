@@ -14,10 +14,6 @@ View(data)
 # y outcome trying to measure
 summary(data$ftretention_rate)
 
-
-
-
-
 #Suspected variables highly correlated to remove one and keep the other
 
 #Category tuition 
